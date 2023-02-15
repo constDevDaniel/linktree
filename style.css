@@ -33,12 +33,13 @@ body * {
 
 body {
     background: var(--bg-url) no-repeat top center/cover;
+    height: 100vh;
 }
 
 #container {
-    width: 100%;
+    width: 90%;
     max-width: 588px;
-    margin: 56px auto 0;
+    margin: auto;
     padding: 0 24px;
     color: var(--text-color);
 }
@@ -76,7 +77,6 @@ body {
     border-radius: 50%;
     background: rgb(255, 255, 255) var(--background-svg) no-repeat center;
     z-index: 1;
-
 }
 
 .light #switch button {
@@ -145,4 +145,36 @@ ul li a:hover {
 footer {
     text-align: center;
     padding-block: 24px;
+}
+
+@media (min-width: 700px) {
+    /* de 700px pra cima ira aplicar as seguintes regras css: */
+    /* estamos trocando a imagem de fundo caso seja maior que 700px */
+    :root {
+        --bg-url: url(./assets/BG-desktopDark.jpg);
+    }
+
+    .light {
+        --bg-url: url(./assets/BG-desktopLight.jpg);
+    }
+}
+
+
+@media (max-width: 375px) {
+    /* de 320px pra baixo ira aplicar as seguintes regras css: */
+    #profile img {
+        width: 90px;
+    }
+
+    #container {
+        width: 88%;
+    }
+
+    body {
+        font-size: 13px;
+    }
+
+    ul li a {
+        padding: 12px 4px ;
+    }
 }
